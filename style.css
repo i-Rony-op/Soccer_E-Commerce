@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@font-face {
+  font-family: FuturaBold;
+  src: url("Font/FuturaBold.ttf");
+}
+*::selection {
+  color: white;
+  background-color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #f7f7f7;
+}
+#nav {
+  background-color: #f7f7f7;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#nav #nav_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#nav_2 #links a {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 20px;
+}
+#nav_2 #links a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+#nav_2 #links a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+#links {
+  padding: 10px;
+}
+#nav_2 #icons i {
+  font-size: 20px;
+  margin: 0 20px;
+  font-weight: 100;
+}
+#icons {
+  padding: 10px;
+  border-radius: 50px;
+}
+#cursor {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: rgba(32, 178, 171, 0.608);
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+}
+#page1 {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  padding: 0 1vw;
+  padding-top: 20vh;
+}
+
+#page1 h1 {
+  font-size: 15.8vw;
+  text-transform: uppercase;
+  font-family: FuturaBold;
+  line-height: 14vw;
+  color: rgba(32, 178, 171, 0.608);
+  letter-spacing: -8px;
+}
+
+#video-container {
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+  margin-top: 1vw;
+  position: relative;
+  border-radius: 20px;
+}
+
+#video-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+#video-container #play {
+  padding: 3vw 2.2vw;
+  background-color: rgba(32, 178, 171, 0.608);
+  color: white;
+  font-size: 1.3vw;
+  position: fixed;
+  text-transform: uppercase;
+  font-family: futura;
+  border-radius: 50%;
+  opacity: 0;
+  scale: 0;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 3vw 1vw;
+  justify-content: space-between;
+}
+
+#page2 .elem {
+  height: 100%;
+  width: 31%;
+  /* background-color: lightgreen; */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#page2 .elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.1;
+}
+
+#page2 .elem .dets {
+  height: 45px;
+  border-radius: 50px;
+  background-color: rgba(32, 178, 171, 0.729);
+  width: 70%;
+  z-index: 9;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  position: absolute;
+}
+#page3 {
+  min-height: 120vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#page3 .child {
+  height: 55vh;
+  width: 40vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page3 .child img {
+  padding: 20px;
+  border: 0.5px solid rgba(32, 178, 171, 0.176);
+  border-radius: 5px;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  #page1 {
+    min-height: 70vh;
+    width: 100%;
+    padding: 0 3vw;
+    padding-top: 25vh;
+  }
+  #page1 h1 {
+    font-size: 15.5vw;
+    text-transform: uppercase;
+    font-family: futura;
+    line-height: 14vw;
+    color: rgba(32, 178, 171, 0.608);
+    letter-spacing: -3px;
+  }
+
+  #video-container {
+    height: 25vh;
+    width: 100%;
+    margin-top: 3vw;
+  }
+  #page2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5vw 3vw;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #page2 .elem {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 3vw;
+    /* position: relative; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+  }
+  #page2 .elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.1;
+  }
+}
